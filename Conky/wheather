@@ -1,0 +1,1 @@
+curl wttr.in/Tachira?format="%l:+%c+%t+%m+\nHumedad:%h\nVientos:+%w\n"
