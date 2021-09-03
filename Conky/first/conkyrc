@@ -17,8 +17,8 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     use_xft = true,
-    font = 'fixed:size=10:normal',
-    gap_x = 40,
+    font = 'JetBrains Mono Bold Nerd Font Complete:size=12:normal',
+    gap_x = 50,
     gap_y = 40,
     minimum_height = 5,
 	minimum_width = 5,
@@ -41,54 +41,56 @@ conky.config = {
 	own_window_type = 'normal',
 	own_window_class = 'conky',
 	own_window_title = 'conky',
-	maximum_width = 200,
+	maximum_width = 230,
 }
 conky.text = [[
-${alignc}${color #AAAAAA}$nodename
-$hr
+${alignc}${color #AAAAAA}${font JetBrains Mono Bold Nerd Font Complete:size=16}$nodename
+#
+${color #AAAAAA}$hr${font JetBrains Mono Bold Nerd Font Complete:size=12}
+#
 ${color #AAAAAA}OS: ${color #FFFFFF}${exec lsb_release -d | sed -e 's/.*: //' | awk '{print $2,$3,$4}'}
 ${color #AAAAAA}Kernel: ${color #FFFFFF}$kernel
 ${color #AAAAAA}System: ${color #FFFFFF}${exec cat /sys/devices/virtual/dmi/id/product_name}
 ${color #AAAAAA}Uptime: ${color #FFFFFF}$uptime
-${color #AAAAAA}Processes: ${color #FFFFFF}$processes${color #AAAAAA}${alignr}Running: ${color #FFFFFF}$running_processes
+${color #AAAAAA}Processes: ${color #FFFFFF}$processes${color #AAAAAA}${alignr}Run: ${color #FFFFFF}$running_processes
 $hr
-${color #AAAAAA}COMMAND           ${color #AAAAAA}MEM%  CPU%
+${color #AAAAAA}CMD        ${color #AAAAAA}MEM%  CPU%
 ${color #FFFFFF}${top name 1}${top mem 1}${top cpu 1}
 ${color #FFFFFF}${top name 2}${top mem 2}${top cpu 2}
 ${color #FFFFFF}${top name 3}${top mem 3}${top cpu 3}
-
+#
 ${alignc}${color #AAAAAA}CPU 0
  ${color #FFFFFF}${cpu cpu0}% $alignr ${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz    ${hwmon 1 temp 1}°C  
-${cpubar cpu0 8,200}
-${color #AAAAAA}${cpugraph cpu0 8,200}
+${cpubar cpu0 8,230}
+${color #AAAAAA}${cpugraph cpu0 8,230}
 ${alignc}${color #AAAAAA}CPU 1 
 ${color #FFFFFF}${cpu cpu1}% $alignr ${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz    ${hwmon 1 temp 1}°C  
-${cpubar cpu1 8,200}
-${color #AAAAAA}${cpugraph cpu1 8,200}
+${cpubar cpu1 8,230}
+${color #AAAAAA}${cpugraph cpu1 8,230}
 ${alignc}${color #AAAAAA}CPU 2
 ${color #FFFFFF}${cpu cpu2}% $alignr ${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz    ${hwmon 1 temp 1}°C  
-${cpubar cpu2 8,200}
-${color #AAAAAA}${cpugraph cpu2 8,200}
+${cpubar cpu2 8,230}
+${color #AAAAAA}${cpugraph cpu2 8,230}
 ${alignc}${color #AAAAAA}CPU 3 
 ${color #FFFFFF}${cpu cpu1}% $alignr ${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz    ${hwmon 1 temp 1}°C 
-${cpubar cpu3 8,200}
-${color #AAAAAA}${cpugraph cpu3 8,200}
-
+${cpubar cpu3 8,230}
+${color #AAAAAA}${cpugraph cpu3 8,230}
+#
 ${color #AAAAAA}RAM: ${color #FFFFFF}$memperc%${alignr}$mem / $memmax 
 ${membar 8}
-${color #AAAAAA}${memgraph 8,200}
-
+${color #AAAAAA}${memgraph 8}
+#
 ${color #AAAAAA}NTFS:${color #FFFFFF}${fs_used_perc /run/media/richard/eva-02/}%  ${fs_used /run/media/richard/eva-02/} /${alignr}${fs_size /run/media/richard/eva-02/}
 ${fs_bar 8 /run/media/richard/eva-02/}
-${color #AAAAAA}${diskiograph sda2 8,200}
+${color #AAAAAA}${diskiograph sda2 8}
 ${color #AAAAAA}EXT4:${color #FFFFFF}${fs_used_perc /}%  ${fs_used /} /${alignr}${fs_size /} 
 ${fs_bar 8 /}
-${color #AAAAAA}${diskiograph sda3 8,200}
-
+${color #AAAAAA}${diskiograph sda3 8}
+#
 ${color #AAAAAA}WLAN:${color #FFFFFF}${wireless_link_qual_perc wlp2s8}%  ${alignr}${downspeed wlp2s8}/ ${upspeed wlp2s8}  
-${color #FFFFFF}${wireless_link_bar 8,200 wlp2s8}
-${color #AAAAAA}${downspeedgraph wlp2s8 8,96} ${alignr}${upspeedgraph wlp2s8 8,96}
-
-
-
+${color #FFFFFF}${wireless_link_bar 8 wlp2s8}
+${color #AAAAAA}${downspeedgraph wlp2s8 8,110} ${alignr}${upspeedgraph wlp2s8 8,110}
+#
+#
+#
 ]]
