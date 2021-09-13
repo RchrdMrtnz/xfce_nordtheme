@@ -87,8 +87,9 @@ ${color #AAAAAA}EXT4:${color #FFFFFF}${fs_used_perc /}%  ${fs_used /} /${alignr}
 ${fs_bar 8 /}
 ${color #AAAAAA}${diskiograph sda3 8}
 #
-${color #AAAAAA}WLAN:${color #FFFFFF}${wireless_link_qual_perc wlp2s8}%  ${alignr}${downspeed wlp2s8}/ ${upspeed wlp2s8}  
+${alignc}${color #AAAAAA}WLAN:  ${color #FFFFFF}${wireless_link_qual_perc wlp2s8}%  
 ${color #FFFFFF}${wireless_link_bar 8 wlp2s8}
+${color #AAAAAA}↓:${color #FFFFFF}${downspeed wlp2s8}${alignr}${color #AAA}↑:${color #FFFFFF}${upspeed wlp2s8}  
 ${color #AAAAAA}${downspeedgraph wlp2s8 8,110} ${alignr}${upspeedgraph wlp2s8 8,110}
 #
 #
