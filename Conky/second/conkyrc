@@ -20,6 +20,7 @@ conky.config = {
     font = 'JetBrains Mono Bold Nerd Font Complete:size=12:normal',
     gap_x = 50,
     gap_y = 70,
+    color1 ='#ebcb8b',
     minimum_height = 10,
 	minimum_width = 10,
     net_avg_samples = 2,
@@ -44,7 +45,7 @@ conky.config = {
 	maximum_width = 300,
 }
 conky.text = [[
-${color #ebcb8b}${exec /home/richard/.config/conky/clima}
+${color1}${exec /home/richard/.config/conky/clima}
 $hr
 Local IP: ${addr wlp2s8}
 Public IP: ${exec /home/richard/.config/conky/ip}
