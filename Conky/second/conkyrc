@@ -7,6 +7,7 @@ conky.config = {
     
     alignment = 'bottom_left',
     background = true,
+    border_inner_margin=10,
     border_width = 2,
     cpu_avg_samples = 2,
 	default_color = '#ebcb8b',
@@ -17,7 +18,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     use_xft = true,
-    font = 'JetBrains Mono Bold Nerd Font Complete:size=12:normal',
+    font = 'JetBrains Mono Bold Nerd Font Complete:size=12.5:normal',
     gap_x = 50,
     gap_y = 70,
     color1 ='#ebcb8b',
@@ -45,8 +46,13 @@ conky.config = {
 	maximum_width = 300,
 }
 conky.text = [[
+#
+${color1}${exec /home/richard/.config/conky/crypto.sh}
+$hr
+#
 ${color1}${exec /home/richard/.config/conky/clima}
 $hr
+#
 Local IP: ${addr wlp2s8}
 Public IP: ${exec /home/richard/.config/conky/ip}
 ${execi 60 /home/richard/.config/conky/ping.sh 8.8.8.8}
