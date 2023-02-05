@@ -5,7 +5,7 @@ conky.config = {
     own_window_class = 'Conky',
     own_window_type = 'desktop',
     
-    alignment = 'top_right',
+    alignment = 'bottom_right',
     background = true,
     border_inner_margin=10,
     border_width = 2,
@@ -18,11 +18,12 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     use_xft = true,
-    font = 'JetBrains Mono Bold Nerd Font Complete:size=12:normal',
+    font = 'JetBrainsMono Nerd Font Mono:size=14:normal',
     gap_x = 40,
-    gap_y = 25,
+    gap_y = 90,
     color1='#b48ead',
     color2='#a3be8c',
+    wifi='wlp7s0f3u2',	
     minimum_height = 10,
 	minimum_width = 10,
     net_avg_samples = 2,
@@ -44,13 +45,13 @@ conky.config = {
 	own_window_type = 'normal',
 	own_window_class = 'conky',
 	own_window_title = 'conky',
-	maximum_width = 230,
+	maximum_width = 260,
 	
 }
 conky.text = [[
-${alignc}${color1}${font JetBrains Mono Bold Nerd Font Complete:size=16}$nodename 
+${alignc}${color1}${font JetBrainsMonoMedium Nerd Font Mono:style=Medium,Regular:size=15}$nodename 
 #
-${color2}$hr${font JetBrains Mono Bold Nerd Font Complete:size=12.5}
+${color2}$hr${font JetBrainsMonoMedium Nerd Font Mono:style=Medium,Regular:size=13}
 #
 ${color1}OS: ${color2}${exec lsb_release -d | sed -e 's/.*: //' | awk '{print $2,$3}'}
 ${color1}Kernel: ${color2}$kernel
@@ -60,69 +61,68 @@ ${color1}Processes: ${color2}$processes${color1}${alignr}Run: ${color2}$running_
 # PROCESOS
 #
 ${color2}$hr
-${color1}CMD       ${alignc}MEM% ${alignr}CPU% ${color2}
-${top name 1}${top mem 1}${alignr}${top cpu 1}
-${top name 2}${top mem 2}${alignr}${top cpu 2}
-${top name 3}${top mem 3}${alignr}${top cpu 3}
+ ${color1}CMD${alignr}MEM%${color2} 
+${top name 1}${top mem_res 1}
+${top name 2}${top mem_res 2}
+${top name 3}${top mem_res 3}
 #
 ${color2}$hr
 #
 #CPU 00
 #
-
 ${alignc}${color1}CPU 0
- ${color2}${cpu cpu0}% ${alignr}${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz${alignr}  ${hwmon 1 temp 1}°C
-${cpubar cpu0 11,110}${alignr}${cpugraph cpu0 11,110}
+ ${color2}${cpu cpu0}% ${alignr}${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz${alignr}  ${hwmon 0 temp 1}°C
+${cpubar cpu0 11,125}${alignr}${cpugraph cpu0 11,125}
 #
 #cpu01
 ${alignc}${color1}CPU 1
- ${color2}${cpu cpu1}% ${alignr}${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz${alignr}  ${hwmon 1 temp 1}°C
-${cpubar cpu1 11,110}${alignr}${cpugraph cpu1 11,110}#
+ ${color2}${cpu cpu1}% ${alignr}${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz${alignr}  ${hwmon 0 temp 1}°C
+${cpubar cpu1 11,125}${alignr}${cpugraph cpu1 11,125}#
 
 #
 #cpu02
 #
 ${alignc}${color1}CPU 2
- ${color2}${cpu cpu2}% ${alignr}${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz${alignr}  ${hwmon 1 temp 1}°C
-${cpubar cpu2 11,110}${alignr}${cpugraph cpu2 11,110}
+ ${color2}${cpu cpu2}% ${alignr}${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz${alignr}  ${hwmon 0 temp 1}°C
+${cpubar cpu2 11,125}${alignr}${cpugraph cpu2 11,125}
 #
 #cpu03
 #
 ${alignc}${color1}CPU 3
- ${color2}${cpu cpu3}% ${alignr}${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz${alignr}  ${hwmon 1 temp 1}°C
-${cpubar cpu3 11,110}${alignr}${cpugraph cpu3 11,110}
+ ${color2}${cpu cpu3}% ${alignr}${exec awk '/cpu MHz/{i++}i==1{printf "%.f",$4; exit}' /proc/cpuinfo}MHz${alignr}  ${hwmon 0 temp 1}°C
+${cpubar cpu0 11,125}${alignr}${cpugraph cpu3 11,125}
 #
 #ram
 #
 
 ${alignc}${color1}RAM 
  ${color2}$memperc%${alignr}$mem / $memmax 
-${membar 11,110}${alignr}${memgraph 11,110}
+${membar 11,125}${alignr}${memgraph 11,125}
+#
+# ssd
 
 #
-# hdd 
-#
-${alignc}${color1}HDD 00 
- ${color2}${fs_used_perc /}%${alignr}${fs_used /} / ${fs_size /} 
-${fs_bar 11,110 /}${alignr}${diskiograph sda4
- 11,110}
+${alignc}${color1}SSD 00
+${color2}${fs_used_perc /}%${alignr}${fs_used /} / ${fs_size /} 
+${fs_bar 11,125 /}${alignr}${diskiograph sda4
+ 11,125}
 #
 # hdd 2
 #
-${alignc}${color1}HDD 01  
- ${color2}${fs_used_perc /run/media/richard/eva-02/}%${alignr}${fs_used /run/media/richard/eva-02/} /${fs_size /run/media/richard/eva-02/}
-${fs_bar 11,110 /run/media/richard/eva-02/}${alignr}${diskiograph sdb1 11,110}
+#${alignc}${color1}HDD 00
+#${color2}${fs_used_perc /run/media/richard/eva-02/}%${alignr}${fs_used /run/media/richard/eva-02/} /${fs_size /run/media/richard/eva-02/}
+#${fs_bar 11,110 /run/media/richard/eva-02/}${alignr}${diskiograph sdb1 11,110}
 #
 #red
-#
 
-${alignc}${color1}WLAN:  ${color2}${wireless_link_qual_perc wlp2s8}%  
-${wireless_link_bar 11 wlp2s8}
+#
+${color1}WLAN:${alignr}${color2}${wireless_link_qual_perc wlp8s0f3u3}%${alignr}${wireless_link_bar 11,125 wlp8s0f3u3} 
 #
 #down up speed
 #
-${color1}↓:${color2}${downspeed wlp2s8}${alignr}${color1}↑:${color2}${upspeed wlp2s8}  
-${downspeedgraph wlp2s8 11,110} ${alignr}${upspeedgraph wlp2s8 11,110}
+${color1}↓:${color2}${downspeed wlp8s0f3u3}${alignr}${color1}↑:${color2}${upspeed wlp8s0f3u3}  
+${downspeedgraph wlp8s0f3u3 11,125} ${alignr}${upspeedgraph wlp8s0f3u3 11,125}
+# 
 #
 #
 #

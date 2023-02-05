@@ -7,7 +7,7 @@ conky.config = {
     
     alignment = 'bottom_left',
     background = true,
-    border_inner_margin=10,
+    border_inner_margin=5,
     border_width = 2,
     cpu_avg_samples = 2,
 	default_color = '#ebcb8b',
@@ -18,12 +18,14 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     use_xft = true,
-    font = 'JetBrains Mono Bold Nerd Font Complete:size=12.5:normal',
-    gap_x = 50,
-    gap_y = 70,
+    font = 'JetBrainsMono Nerd Font Mono:size=14:normal',
+    gap_x = 40,
+    gap_y = 90,
     color1 ='#ebcb8b',
-    minimum_height = 10,
-	minimum_width = 10,
+    color2='#50fa7b',
+    color3='#ff5555',
+    minimum_height = 5,
+	minimum_width = 5,
     net_avg_samples = 2,
     no_buffers = true,
     out_to_console = false,
@@ -34,7 +36,7 @@ conky.config = {
 	own_window_hints = 'undecorated,sticky,skip_taskbar,below,skip_pager',
     stippled_borders = 0,
 	temperature_unit = 'celsius';
-    update_interval = 120.0,
+    update_interval = 60.0,
     uppercase = false,
     use_spacer = 'none',
     show_graph_scale = false,
@@ -43,18 +45,17 @@ conky.config = {
 	own_window_type = 'normal',
 	own_window_class = 'conky',
 	own_window_title = 'conky',
-	maximum_width = 300,
+	maximum_width = 280,
 }
 conky.text = [[
 #
-${color1}${exec /home/richard/.config/conky/crypto.sh}
+${color1}${font JetBrainsMonoMedium Nerd Font Mono:style=Medium,Regular:size=13}${exec python /home/richard/Desktop/code/my_crypto/crypto_price.py}
 $hr
 #
-${color1}${exec /home/richard/.config/conky/clima}
+${exec /home/richard/.config/conky/clima}
 $hr
 #
-Local IP: ${addr wlp2s8}
+Local IP: ${addr wlp8s0f3u3}
 Public IP: ${exec /home/richard/.config/conky/ip}
-${execi 60 /home/richard/.config/conky/ping.sh 8.8.8.8}
-#
+${exec /home/richard/.config/conky/ping.sh 8.8.8.8}
 ]]
