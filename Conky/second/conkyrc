@@ -49,7 +49,7 @@ conky.config = {
 }
 conky.text = [[
 #
-${color1}${font JetBrainsMonoMedium Nerd Font Mono:style=Medium,Regular:size=13}${exec python /home/richard/Desktop/code/my_crypto/crypto_price.py}
+${color1}${font JetBrainsMonoMedium Nerd Font Mono:style=Medium,Regular:size=13}${exec python /home/richard/.config/conky/crypto_price.py}
 $hr
 #
 ${exec /home/richard/.config/conky/clima}
