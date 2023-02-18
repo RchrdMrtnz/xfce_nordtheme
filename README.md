@@ -1,7 +1,11 @@
 # XFCE NORTH DARK THEME
+### this is my xfce version
+---
 ## CONKY 2 CONFIG
+![Conky theme](demo.jpg)
 ## POP-NORD-DARK + XFWM4
-## Old version
-![Demo 1](demo.jpg)
-## New version
-![Demo 2](demo2.png)
+![pop-nord-dark](demo2.png)
+## zsh theme 'rchrd'
+![zsh theme](demo3.png)
+## numix circle icons
+![numix](demo4.png)
