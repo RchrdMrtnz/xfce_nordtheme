@@ -102,16 +102,10 @@ ${membar 11,125}${alignr}${memgraph 11,125}
 # ssd
 
 #
-${alignc}${color1}SSD 00
+${alignc}${color1}HDD
 ${color2}${fs_used_perc /}%${alignr}${fs_used /} / ${fs_size /} 
 ${fs_bar 11,125 /}${alignr}${diskiograph sda4
  11,125}
-#
-# hdd 2
-#
-#${alignc}${color1}HDD 00
-#${color2}${fs_used_perc /run/media/richard/eva-02/}%${alignr}${fs_used /run/media/richard/eva-02/} /${fs_size /run/media/richard/eva-02/}
-#${fs_bar 11,110 /run/media/richard/eva-02/}${alignr}${diskiograph sdb1 11,110}
 #
 #red
 

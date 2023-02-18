@@ -90,7 +90,7 @@ font:
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 15.0
+  size: 18.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -128,12 +128,46 @@ draw_bold_text_with_bright_colors: true
 # and cursor.background colors, otherwise invert the colors of the cursor.
 # custom_cursor_colors: false
 
-# Colors
+#! Colors
+# Colors (Challenger Deep)
 colors:
-  # Default colours
+  # Default colors
   primary:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
+    background: '0x1e1c31'
+    foreground: '0xcbe1e7'
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xff271d'
+    cursor: '0xfbfcfc'
+  # Normal colors
+  normal:
+    black:   '0x141228'
+    red:     '0xff5458'
+    green:   '0x62d196'
+    yellow:  '0xffb378'
+    blue:    '0x65b2ff'
+    magenta: '0x906cff'
+    cyan:    '0x63f2f1'
+    white:   '0xa6b3cc'
+  # Bright colors
+  bright:
+    black:   '0x565575'
+    red:     '0xff8080'
+    green:   '0x95ffa4'
+    yellow:  '0xffe9aa'
+    blue:    '0x91ddff'
+    magenta: '0xc991e1'
+    cyan:    '0xaaffe4'
+    white:   '0xcbe3e7'
+
+
+
+#colors:
+
+  # Default colours
+ # primary:
+ #   background: '0x282a36'
+ #   foreground: '0xf8f8f2'
 
   # Colors that should be used to draw the terminal cursor. If these are unset,
   # the cursor colour will be the inverse of the cell colour.
@@ -143,37 +177,37 @@ colors:
   #   cursor: '0xffffff'
 
   # Normal colors
-  normal:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0xcaa9fa'
-    magenta: '0xff79c6'
-    cyan:    '0x8be9fd'
-    white:   '0xbfbfbf'
+#  normal:
+#    black:   '0x000000'
+#    red:     '0xff5555'
+#    green:   '0x50fa7b'
+#    yellow:  '0xf1fa8c'
+#    blue:    '0xcaa9fa'
+#    magenta: '0xff79c6'
+#    cyan:    '0x8be9fd'
+#    white:   '0xbfbfbf'
 
   # Bright colors
-  bright:
-    black:   '0x282a35'
-    red:     '0xff6e67'
-    green:   '0x5af78e'
-    yellow:  '0xf4f99d'
-    blue:    '0xcaa9fa'
-    magenta: '0xff92d0'
-    cyan:    '0x9aedfe'
-    white:   '0xe6e6e6'
+#  bright:
+#    black:   '0x282a35'
+#    red:     '0xff6e67'
+#    green:   '0x5af78e'
+#    yellow:  '0xf4f99d'
+#    blue:    '0xcaa9fa'
+#    magenta: '0xff92d0'
+#    cyan:    '0x9aedfe'
+#    white:   '0xe6e6e6'
 
-  # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+#  # Dim colors (Optional)
+#  dim:
+#    black:   '0x333333'
+#    red:     '0xf2777a'
+#    green:   '0x99cc99'
+#    yellow:  '0xffcc66'
+#    blue:    '0x6699cc'
+#    magenta: '0xcc99cc'
+#    cyan:    '0x66cccc'
+#    white:   '0xdddddd'
 
   # Tomorrow Night Bright
   # primary:
@@ -212,7 +246,7 @@ colors:
   # Example:
   #   `- { index: 16, color: '0xff00ff' }`
   #
-  indexed_colors: []
+ # indexed_colors: []
 
 # Visual Bell
 #
@@ -242,7 +276,9 @@ bell:
   duration: 0
 
 # Background opacity
-# window.opacity: 50
+window:
+  opacity: 0.90
+
 
 # Key bindings
 #
@@ -351,12 +387,12 @@ key_bindings:
   - { key: Equals,   mods: Command,       action: IncreaseFontSize             }
   - { key: Minus,    mods: Command,       action: DecreaseFontSize             }
   - { key: Minus,    mods: Command|Shift, action: ResetFontSize                }
-  - { key: PageUp,   mods: Shift,         chars: "\x1b[5;2~"                   }
-  - { key: PageUp,   mods: Control,       chars: "\x1b[5;5~"                   }
-  - { key: PageUp,                        chars: "\x1b[5~"                     }
-  - { key: PageDown, mods: Shift,         chars: "\x1b[6;2~"                   }
-  - { key: PageDown, mods: Control,       chars: "\x1b[6;5~"                   }
-  - { key: PageDown,                      chars: "\x1b[6~"                     }
+# - { key: PageUp,   mods: Shift,         chars: "\x1b[5;2~"                   }
+# - { key: PageUp,   mods: Control,       chars: "\x1b[5;5~"                   }
+# - { key: PageUp,                        chars: "\x1b[5~"                     }
+# - { key: PageDown, mods: Shift,         chars: "\x1b[6;2~"                   }
+# - { key: PageDown, mods: Control,       chars: "\x1b[6;5~"                   }
+# - { key: PageDown,                      chars: "\x1b[6~"                     }
   - { key: Left,     mods: Shift,         chars: "\x1b[1;2D"                   }
   - { key: Left,     mods: Control,       chars: "\x1b[1;5D"                   }
   - { key: Left,     mods: Alt,           chars: "\x1b[1;3D"                   }
@@ -378,22 +414,22 @@ key_bindings:
   - { key: Down,                          chars: "\x1b[B",   mode: ~AppCursor  }
   - { key: Down,                          chars: "\x1bOB",   mode: AppCursor   }
   - { key: Tab,      mods: Shift,         chars: "\x1b[Z"                      }
-  - { key: F1,                            chars: "\x1bOP"                      }
-  - { key: F2,                            chars: "\x1bOQ"                      }
-  - { key: F3,                            chars: "\x1bOR"                      }
-  - { key: F4,                            chars: "\x1bOS"                      }
+#  - { key: F1,                            chars: "\x1bOP"                      }
+#  - { key: F2,                            chars: "\x1bOQ"                      }
+#  - { key: F3,                            chars: "\x1bOR"                      }
+#  - { key: F4,                            chars: "\x1bOS"                      }
   - { key: F5,                            chars: "\x1b[15sudo"                    }
-  - { key: F6,                            chars: "\x1b[17~"                    }
-  - { key: F7,                            chars: "\x1b[18~"                    }
-  - { key: F8,                            chars: "\x1b[19~"                    }
-  - { key: F9,                            chars: "\x1b[20~"                    }
-  - { key: F10,                           chars: "\x1b[21~"                    }
-  - { key: F11,                           chars: "\x1b[23~"                    }
-  - { key: F12,                           chars: "\x1b[24~"                    }
-  - { key: Back,                          chars: "\x7f"                        }
-  - { key: Back,     mods: Alt,           chars: "\x1b\x7f"                    }
-  - { key: Insert,                        chars: "\x1b[2~"                     }
-  - { key: Delete,                        chars: "\x1b[3~"                     }
+#  - { key: F6,                            chars: "\x1b[17~"                    }
+#  - { key: F7,                            chars: "\x1b[18~"                    }
+#  - { key: F8,                            chars: "\x1b[19~"                    }
+#  - { key: F9,                            chars: "\x1b[20~"                    }
+#  - { key: F10,                           chars: "\x1b[21~"                    }
+#  - { key: F11,                           chars: "\x1b[23~"                    }
+#  - { key: F12,                           chars: "\x1b[24~"                    }
+#  - { key: Back,                          chars: "\x7f"                        }
+#  - { key: Back,     mods: Alt,           chars: "\x1b\x7f"                    }
+#  - { key: Insert,                        chars: "\x1b[2~"                     }
+#  - { key: Delete,                        chars: "\x1b[3~"                     }
 
     # shortcuts for tmux. the leader key is control-b (0x02)
   - { key: W,        mods: Command,       chars: "\x02&"                       }  # close tab (kill)
@@ -439,7 +475,7 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: false
+  save_to_clipboard: true
 
 # Mouse bindings
 #
@@ -512,3 +548,4 @@ debug:
   ref_test: false
 
 # vim: nospell
+

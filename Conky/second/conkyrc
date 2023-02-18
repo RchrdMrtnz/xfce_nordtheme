@@ -49,13 +49,13 @@ conky.config = {
 }
 conky.text = [[
 #
-${color1}${font JetBrainsMonoMedium Nerd Font Mono:style=Medium,Regular:size=13}${exec python /home/richard/.config/conky/crypto_price.py}
+${color1}${font JetBrainsMonoMedium Nerd Font Mono:style=Medium,Regular:size=13}${exec python $HOME/.config/conky/crypto_price.py}
 $hr
 #
 ${exec /home/richard/.config/conky/clima}
 $hr
 #
 Local IP: ${addr wlp8s0f3u3}
-Public IP: ${exec /home/richard/.config/conky/ip}
-${exec /home/richard/.config/conky/ping.sh 8.8.8.8}
+Public IP: ${exec $HOME/.config/conky/ip}
+${exec $HOME/.config/conky/ping.sh 8.8.8.8}
 ]]
