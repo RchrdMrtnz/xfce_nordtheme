@@ -52,7 +52,7 @@ conky.text = [[
 ${color1}${font JetBrainsMonoMedium Nerd Font Mono:style=Medium,Regular:size=13}${exec python $HOME/.config/conky/crypto_price.py}
 $hr
 #
-${exec /home/richard/.config/conky/clima}
+${exec $HOME/.config/conky/clima}
 $hr
 #
 Local IP: ${addr wlp8s0f3u3}
